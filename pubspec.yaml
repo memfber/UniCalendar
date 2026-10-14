@@ -1,0 +1,29 @@
+name: unical
+description: 日历 + 课程表 + 日程 三合一跨平台应用（Android / iOS / HarmonyOS / Windows）
+publish_to: "none"
+
+# 版本锁定说明：
+# 鸿蒙端必须使用 OpenHarmony SIG 的 flutter_flutter（ohos 分支），
+# 其基线版本为 3.7 / 3.22 / 3.27 / 3.35 / 3.41。
+# 请让 environment.sdk 与本机的 ohos Flutter SDK 版本保持一致，
+# 否则 `flutter build hap` 会失败。
+environment:
+  sdk: ">=3.4.0 <4.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # —— 以下为 P3 阶段接入，骨架阶段刻意不引入，保证依赖最小化 ——
+  # sqflite: ^2.3.3                 # 本地 SQLite（四端同构持久化）
+  # path_provider: ^2.1.4           # 获取各端可写目录
+  # shared_preferences: ^2.3.0      # 轻量配置
+  # ics 导出：自行实现（见 lib/src/data/），不引三方库以控体积
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^5.0.0
+
+flutter:
+  uses-material-design: true
